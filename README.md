@@ -2,10 +2,7 @@
 # Enhancement for Backlit Images
 # Author : Rolf Lussi
 # Contributor : Suah Kim
-# Last Changes: 2017-2-27
-
-For usage:
-ACERDH(insert_name_of_image)
+# Last Changes: 2019-7-28
 
 For example: 
 main

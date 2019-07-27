@@ -1,4 +1,4 @@
-function [rdh_image, iteration_max, EC_list, LM_size_list]=acerdh_splitting(image,actual_payload,iteration_max)
+function [rdh_image, iteration_max, EC_list, LM_size_list,embedding_capacy_left]=acerdh_splitting(image,actual_payload,iteration_max)
 switch nargin
     case 2
         iteration_max = 1000;
@@ -103,10 +103,11 @@ while true
         ref_image_hor(:,iteration+1:end) = [];
         splitting_distortion(iteration+1:end)=[];
         combining_distortion(iteration+1:end)=[];
+        embedding_capacy_left=length(payload_total)-length(actual_payload);
         break
         
     else
-
+        
         if length(payload_total) < length(actual_payload)
             payload_left_over=length(actual_payload)-length(payload_total);
             if payload_left_over < H_P_H-length(LM)-16
@@ -120,7 +121,7 @@ while true
         end
         
         payload_length_last=length(payload);
-        payload_total=[payload_total; payload];        
+        payload_total=[payload_total; payload];
         message=[LM ; de2bi(P_H_previous,8)'; de2bi(P_L_previous,8)';payload];
         iteration=iteration+1;
         EC_list(iteration)=H_P_H-length(LM)-16;

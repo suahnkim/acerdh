@@ -1,4 +1,6 @@
-function [re_image payload_rec]=acerdh_splitting_recovery(rdh_image, adjusted_payload)
+function [re_image payload_rec]=acerdh_splitting_recovery(rdh_image)
+
+
 tic
 image_size = size(rdh_image);
 image_hor = reshape(rdh_image,image_size(1)*image_size(2),1);

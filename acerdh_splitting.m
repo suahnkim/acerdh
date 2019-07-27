@@ -1,4 +1,10 @@
 function [rdh_image, iteration_max, EC_list, LM_size_list,embedding_capacy_left]=acerdh_splitting(image,actual_payload,iteration_max)
+%Preprocess Payload (length appended)
+image_size=size(image);
+payload_length_max=2*ceil(log2(image_size(1)*image_size(2)+1));
+actual_payload=[de2bi(length(actual_payload),payload_length_max)'; actual_payload];
+
+
 switch nargin
     case 2
         iteration_max = 1000;

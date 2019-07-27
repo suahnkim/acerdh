@@ -2,17 +2,14 @@ function main
 
 %Example code
 image = rgb2gray(imread('msl01.png'));
-image_size=size(image);
+
 
 %Payload
 payload_length=25000; %number of bits to be embedded
 payload=randi([0,1],payload_length,1);
-%Preprocess Payload (length appended)
-payload_length_max=2*ceil(log2(image_size(1)*image_size(2)+1));
-adjusted_payload=[de2bi(payload_length,payload_length_max)'; payload];
 
 %Embedding 
-[rdh_image, ~, ~, ~,embedding_capacity_left]=acerdh_splitting(image,adjusted_payload);
+[rdh_image, ~, ~, ~,embedding_capacity_left]=acerdh_splitting(image,payload);
 if embedding_capacity_left < 0
     disp('Failed embedding')
 else

@@ -165,11 +165,7 @@ end
 function P_L=find_P_L(table,P_H)
 combine_table = [table(1:end-1,1)+table(2:end,1) table(1:end-1,2)];
 
-%remove P_H-1, P_H, P_H+1 from possible P_C, since they are combined only
-%two possiblities need to be removed
-combine_table(combine_table(:,2)==P_H-1,:)=[];
-combine_table(combine_table(:,2)==P_H-1,:)=[];
-
+%sort
 [sort_combine_table, sort_combine_table_index]=sort(combine_table(:,1));
 sort_combine_table = [sort_combine_table combine_table(sort_combine_table_index,2)];
 list_P_L=sort_combine_table(sort_combine_table(:,1)==sort_combine_table(1,1),:);

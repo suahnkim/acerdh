@@ -5,6 +5,7 @@ image = rgb2gray(imread('msl01.png'));
 
 
 %Payload
+rng(0) %set randomness
 payload_length=25000; %number of bits to be embedded
 payload=randi([0,1],payload_length,1);
 

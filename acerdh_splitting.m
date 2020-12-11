@@ -187,15 +187,6 @@ P_L=list_P_L(index,2);
 end
 
 function [P_H, P_L]=peak_selection(image_hor)
-enhancement_mode =0;
-if enhancement_mode == 'maximum'
-    RHS_limit=-1000;
-    LHS_limit=1000;
-else
-    RHS_limit=0;
-    LHS_limit=0;
-end
-
 table = [ zeros(256,1) transpose(0:255)];
 
 for i=1:length(image_hor)

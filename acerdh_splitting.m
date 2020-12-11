@@ -171,7 +171,7 @@ sort_combine_table = [sort_combine_table combine_table(sort_combine_table_index,
 list_P_L=sort_combine_table(sort_combine_table(:,1)==sort_combine_table(1,1),:);
 
 %Update list_P_L based on RHS, since for RHS case P_L combines w P_L+1
-list_P_L(list_P_L(:,2)>P_H,1)=list_P_L(list_P_L(:,2)>P_H,1)+1;
+list_P_L(list_P_L(:,2)>P_H,2)=list_P_L(list_P_L(:,2)>P_H,2)+1;
 
 %if there are multiple candidates, choose the one with less P_L-d
 list_P_L_d=[list_P_L(:,2) table(list_P_L(:,2)+1,1)];

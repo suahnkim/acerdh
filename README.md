@@ -3,7 +3,9 @@ Author : Rolf Lussi
 Contributor : Suah Kim
 Last Changes: 2019-7-28
 
-For example: 
+This is an implementation of paper https://ieeexplore.ieee.org/document/7368603 with optimization of lowest peak selection when there are multiple options. 
+
+To run an example: 
 run
 main.m
 

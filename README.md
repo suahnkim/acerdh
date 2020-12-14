@@ -6,3 +6,5 @@ Last Changes: 2019-7-28
 For example: 
 run
 main.m
+
+This is vector optimized implementation. A code that is easier to understand will be uploaded in the future.

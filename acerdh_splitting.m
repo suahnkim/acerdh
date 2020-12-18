@@ -176,9 +176,9 @@ list_P_L(list_P_L(:,2)>P_H,2)=list_P_L(list_P_L(:,2)>P_H,2)+1;
 %if there are multiple candidates, choose the one with less P_L-d
 list_P_L_d=[ table(list_P_L(:,2)+1,1) list_P_L(:,2)];
 list_P_L=list_P_L(list_P_L_d(:,1)==min(list_P_L_d(:,1)),:);
-%if there are multiple candidates, choose the one that is furthest away
+%if there are multiple candidates, choose the one that is closest (different from paper)
 %from P_H
-[~,index]=max(abs(list_P_L(:,2)-P_H));
+[~,index]=min(abs(list_P_L(:,2)-P_H));
 P_L=list_P_L(index,2);
 end
 

@@ -1,7 +1,7 @@
 function main
 
 %Example code
-image = rgb2gray(imread('msl01.png'));
+image = rgb2gray(imread('images/Bike.png'));
 
 
 %Payload

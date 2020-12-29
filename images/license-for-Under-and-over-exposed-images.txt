@@ -1,0 +1,11 @@
+License information for the dataset
+
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+Dataset: Under-and-over-exposed-images
+Content: 6 color png images, Bike.png, Creek.png, Hanok.png, Matterhorn.png, Pond.png, Sign.png
+Creator: Rolf Lussi
+Dataset created: During internship at Korea University
+Maintainer: Suah Kim, suahnkim@gmail.com
+ 

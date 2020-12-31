@@ -5,7 +5,12 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 Dataset: Under-and-over-exposed-images
 Content: 6 color png images, Bike.png, Creek.png, Hanok.png, Matterhorn.png, Pond.png, Sign.png
-Creator: Rolf Lussi
-Dataset created: During internship at Korea University
-Maintainer: Suah Kim, suahnkim@gmail.com
+Creator: Rolf Lussi (rolf.lussi@gmail.com)
+Maintainer: Suah Kim (suahnkim@gmail.com)
+Dataset created: During 2015 internship at Korea University by Rolf Lussi 
+
+
+
+
  
+

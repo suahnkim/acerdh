@@ -1,0 +1,25 @@
+Here are citations for common citation formats: 
+
+APA:
+Lussi, R., & Kim, S.. (2015). Under and over exposed image dataset by iaslab. https://iaslab.org/download#under_over_exposed_db.
+
+MLA:
+Lussi, Rolf et al. "Under and over exposed image dataset by iaslab." https://iaslab.org/download#under_over_exposed_db. (2015).
+
+Chicago:
+Lussi, Rolf, and Suah, Kim. "Under and over exposed image dataset by iaslab." https://iaslab.org/download#under_over_exposed_db. (2015).
+
+Harvard:
+Lussi, R., and Kim, S.. (2015). Under and over exposed image dataset by iaslab. https://iaslab.org/download#under_over_exposed_db.
+
+Vancouver:
+Lussi, R, Kim, S. Under and over exposed image dataset by iaslab. https://iaslab.org/download#under_over_exposed_db.
+
+bibtex: 
+@misc{SK_iaslab_under_and_over_exposed_db,
+author = "{Lussi, Rolf and Kim, Suah}",
+title = "{Under and over exposed image dataset by iaslab}",
+year = 2015,
+howpublished = "\url{https://iaslab.org/download#under_over_exposed_db}",
+publisher={iaslab},
+}

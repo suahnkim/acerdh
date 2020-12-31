@@ -1,6 +1,7 @@
-function [rdh_image, iteration_max, EC_list, LM_size_list,embedding_capacy_left]=acerdh_splitting(image,actual_payload,iteration_max)
+function [acerdh_image, iteration_max, EC_list, LM_size_list,embedding_capacy_left]=acerdh_splitting(original_image,actual_payload,iteration_max)
 %Preprocess Payload (length appended)
-image_size=size(image);
+original_image=double(original_image);
+image_size=size(original_image);
 payload_length_max=2*ceil(log2(image_size(1)*image_size(2)+1));
 actual_payload=[de2bi(length(actual_payload),payload_length_max)'; actual_payload];
 
@@ -11,7 +12,7 @@ switch nargin
 end
 rng(0);
 %image = image(5:end-5,5:end-5);
-image_size = size(image);
+image_size = size(original_image);
 splitting_distortion=zeros(1,iteration_max);
 combining_distortion=zeros(1,iteration_max);
 P_H_list=zeros(1,iteration_max);
@@ -19,7 +20,7 @@ P_L_list=zeros(1,iteration_max);
 EC_list=zeros(1,iteration_max);
 LM_size_list=zeros(1,iteration_max);
 ref_image_hor = zeros(image_size(1)*image_size(2),iteration_max);
-ref_image_hor(:,1) = reshape(image,image_size(1)*image_size(2),1);
+ref_image_hor(:,1) = reshape(original_image,image_size(1)*image_size(2),1);
 
 image_hor=ref_image_hor(:,1);
 P_H=0;
@@ -102,7 +103,7 @@ while true
         %Append back the first 16 pixels and replace 16 lsbs with P_H and P_L
         image_hor=[bitxor(bitxor(first_16_pixels,mod(first_16_pixels,2)),[de2bi(P_H,8)'; de2bi(P_L,8)']) ;image_hor];
         iteration_max = iteration;
-        rdh_image=reshape(image_hor,image_size(1),image_size(2));
+        acerdh_image=reshape(image_hor,image_size(1),image_size(2));
         
         EC_list(iteration+1:end)=[];
         LM_size_list(iteration+1:end)=[];

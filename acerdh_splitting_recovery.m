@@ -1,9 +1,10 @@
-function [re_image payload_rec]=acerdh_splitting_recovery(rdh_image)
+function [recovered_image, recovered_payload]=acerdh_splitting_recovery(acerdh_image)
 
+acerdh_image=double(acerdh_image);
 
 tic
-image_size = size(rdh_image);
-image_hor = reshape(rdh_image,image_size(1)*image_size(2),1);
+image_size = size(acerdh_image);
+image_hor = reshape(acerdh_image,image_size(1)*image_size(2),1);
 % Reverse Operation
 first_16_pixels_rec=bitxor(image_hor(1:16),mod(image_hor(1:16),2));
 P_H_rec=bi2de(mod(image_hor(1:8)',2));
@@ -29,7 +30,7 @@ LM_rec=message_rec(1:LM_size);
 P_H_p_rec=bi2de(message_rec(1+LM_size:8+LM_size)');
 P_L_p_rec=bi2de(message_rec(9+LM_size:16+LM_size)');
 first_16_pixels_rec=bitxor(first_16_pixels_rec,message_rec(17+LM_size:32+LM_size));
-payload_rec=message_rec(33+LM_size:end);
+recovered_payload=message_rec(33+LM_size:end);
 
 %Shift back
 if d == 1
@@ -66,7 +67,7 @@ while (P_H_rec ~= 0 || P_L_rec ~= 0)
     LM_rec=message_rec(1:LM_size);
     P_H_p_rec=bi2de(message_rec(1+LM_size:8+LM_size)');
     P_L_p_rec=bi2de(message_rec(9+LM_size:16+LM_size)');
-    payload_rec=[ message_rec(17+LM_size:end); payload_rec];
+    recovered_payload=[ message_rec(17+LM_size:end); recovered_payload];
 
     %Shift back
     if d == 1
@@ -83,10 +84,10 @@ while (P_H_rec ~= 0 || P_L_rec ~= 0)
     %     isequal(image_hor,ref_image_hor(:,iteration+1))
     %     [P_H_rec P_L_rec]
 end
-re_image=reshape(image_hor,image_size(1),image_size(2));
+recovered_image=reshape(image_hor,image_size(1),image_size(2));
 payload_length_max=2*ceil(log2(image_size(1)*image_size(2)+1)); 
-payload_length=bi2de(payload_rec(1:payload_length_max)');
-payload_rec(1:payload_length_max)=[];
-payload_rec(payload_length+1:end)=[];
+payload_length=bi2de(recovered_payload(1:payload_length_max)');
+recovered_payload(1:payload_length_max)=[];
+recovered_payload(payload_length+1:end)=[];
 disp("Decoding time")
 toc

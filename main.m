@@ -1,8 +1,8 @@
 function main
 
 %Example code
-original_image_name='image/original/Bike_grayscaled.png';
-acerdh_image_name='image/acerdh_enhanced/Bike_grayscaled_acerdh.png';
+original_image_name='image/original/Bike_grayscale.png';
+acerdh_image_name='image/acerdh_enhanced/Bike_grayscale_acerdh.png';
 payload_length=25000; %number of bits to be embedded
 
 %Read image and convert it to double

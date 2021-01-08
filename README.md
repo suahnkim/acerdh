@@ -10,4 +10,4 @@ This is an implementation of paper https://ieeexplore.ieee.org/document/7368603 
 This is vector optimized implementation. A code that is easier to understand will be uploaded in the future.
 
 # Code Repositories
-The same code can be found @ gitlab: https://gitlab.com/suahnkim/acerdh and gitee: https://gitee.com/suahnkim/bdfs
+The same code can be found @ gitlab: https://gitlab.com/suahnkim/acerdh and gitee: https://gitee.com/suahnkim/acerdh

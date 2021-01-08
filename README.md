@@ -1,6 +1,6 @@
 # acerdh: automatic contrast enhancement using reversible data hiding
-Author : Rolf Lussi <br>
-Contributor : Suah Kim (https://iaslab.org) <br>
+Author : Rolf Lussi, ZHAW Institute of Embedded Systems <br>
+Contributor : Suah Kim, <a href="https://iaslab.org">iaslab</a> <br>
 Last Changes: 2020-12-29 <br>
 
 To run an example: <br>

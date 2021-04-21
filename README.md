@@ -26,6 +26,7 @@ main
 The same code can be found @ gitlab: https://gitlab.com/suahnkim/acerdh and gitee: https://gitee.com/suahnkim/acerdh
 
 # Contributor
+Author: Rolf Lussi <br>
 This repository is maintained by Suah Kim @ https://iaslab.org.
 <br>You can send email @ suahnkim(at)gmail.com for comments or requests.
 
